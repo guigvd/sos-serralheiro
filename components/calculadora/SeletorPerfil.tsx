@@ -59,7 +59,7 @@ export default function SeletorPerfil({
           <option value="">Selecione um perfil...</option>
           {perfis.map((p) => (
             <option key={p.cod} value={p.cod}>
-              {p.cod} — {p.peso.toFixed(3)} kg/m
+              {p.cod}
             </option>
           ))}
         </select>
