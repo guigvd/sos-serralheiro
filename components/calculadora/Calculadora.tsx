@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 import type {
   Cor,
@@ -85,18 +86,29 @@ export default function Calculadora() {
         </h2>
 
         {perfil && (
-          <div className="mb-6 rounded-lg bg-gray-50 p-4">
-            <p className="text-sm text-gray-500">
-              Perfil selecionado
-            </p>
+          <div className="mb-6 rounded-lg bg-gray-50 p-4 flex justify-between">
+            <div>
+              <p className="text-sm text-gray-500">
+                Perfil selecionado
+              </p>
 
-            <p className="font-semibold">
-              {perfil.cod}
-            </p>
+              <p className="font-semibold">
+                {perfil.cod}
+              </p>
 
-            <p className="text-sm text-gray-500">
-              {perfil.peso.toFixed(3)} kg/m
-            </p>
+              <p className="text-sm text-gray-500">
+                {perfil.peso.toFixed(3)} kg/m
+              </p>
+            </div>
+
+            <Image
+              // src={`/images/perfis/${perfil.cod}.png`}
+              src="/perfis/176.png"
+              alt={`Perfil ${perfil.cod}`}
+              width={100}
+              height={100}
+              className="h-auto w-auto"
+            />
           </div>
         )}
 
