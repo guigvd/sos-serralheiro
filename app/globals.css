@@ -1,3 +1,14 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Safe area para iOS */
+.menu-mobile {
+  padding-bottom: env(safe-area-inset-bottom);
+}
