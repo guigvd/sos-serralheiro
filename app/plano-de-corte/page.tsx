@@ -17,7 +17,7 @@ export default function PaginaPlanoDeCorte() {
   return (
     <div className="space-y-8 max-w-3xl mx-auto">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Plano de Corte</h1>
+        <h1 className="text-2xl font-bold text-gray-200">Plano de Corte</h1>
         <p className="mt-1 text-sm text-gray-500">
           Selecione a tipologia para gerar o plano de corte completo.
         </p>
