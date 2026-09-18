@@ -8,6 +8,7 @@ export type Perfil = {
   cod: string
   peso: number
   linha: Linha
+  imagem?: string
 }
 
 export type ItemLista = {
