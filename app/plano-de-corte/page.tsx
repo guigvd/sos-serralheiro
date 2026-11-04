@@ -30,8 +30,8 @@ export default function PaginaPlanoDeCorte() {
   return (
     <div className="space-y-6 max-w-3xl mx-auto">
       <div>
-        <h1 className="text-2xl font-semibold text-[#f5f5f5]">Plano de Corte</h1>
-        <p className="mt-1 text-sm text-[#6b7280]">
+        <h1 className="text-2xl font-semibold text-text-primary">Plano de Corte</h1>
+        <p className="mt-1 text-sm text-text-secondary">
           Selecione a linha e a tipologia para gerar o plano de corte.
         </p>
       </div>
@@ -45,8 +45,8 @@ export default function PaginaPlanoDeCorte() {
             onClick={() => setLinhaAtiva(linha)}
             className={`rounded-lg border px-4 py-1.5 text-sm font-medium transition ${
               linhaAtiva === linha
-                ? 'border-[#f97316] bg-[#f97316] text-white'
-                : 'border-[#2a2a2a] text-[#6b7280] hover:border-[#f97316] hover:text-[#f97316]'
+                ? 'border-[#f97316] bg-accent text-white'
+                : 'border-border text-text-secondary hover:border-accent hover:text-accent'
             }`}
           >
             {linha}
@@ -60,12 +60,12 @@ export default function PaginaPlanoDeCorte() {
           <Link
             key={item.href}
             href={item.href}
-            className="group rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5 transition-colors hover:border-[#f97316]"
+            className="group rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"
           >
-            <h3 className="font-medium text-[#f5f5f5] group-hover:text-[#f97316] transition-colors">
+            <h3 className="font-medium text-text-primary group-hover:text-accent transition-colors">
               {item.titulo}
             </h3>
-            <p className="mt-1 text-sm text-[#6b7280]">{item.descricao}</p>
+            <p className="mt-1 text-sm text-text-secondary">{item.descricao}</p>
           </Link>
         ))}
       </div>

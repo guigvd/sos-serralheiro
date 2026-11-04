@@ -21,10 +21,10 @@ export default function Home() {
 
       {/* Cabeçalho */}
       <div>
-        <h1 className="text-2xl font-semibold text-[#f5f5f5]">
+        <h1 className="text-2xl font-semibold text-text-primary">
           Bom dia, serralheiro
         </h1>
-        <p className="mt-1 text-sm text-[#6b7280]">
+        <p className="mt-1 text-sm text-text-secondary">
           O que você precisa hoje?
         </p>
       </div>
@@ -35,14 +35,14 @@ export default function Home() {
           <Link
             key={f.href}
             href={f.href}
-            className="group flex flex-col gap-3 rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5 transition-colors hover:border-[#f97316]"
+            className="group flex flex-col gap-3 rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"
           >
             <span className="text-3xl">{f.icone}</span>
             <div>
-              <h2 className="font-medium text-[#f5f5f5] group-hover:text-[#f97316] transition-colors">
+              <h2 className="font-medium text-text-primary group-hover:text-accent transition-colors">
                 {f.titulo}
               </h2>
-              <p className="mt-1 text-sm text-[#6b7280]">
+              <p className="mt-1 text-sm text-text-secondary">
                 {f.descricao}
               </p>
             </div>
@@ -51,9 +51,9 @@ export default function Home() {
       </div>
 
       {/* Sobre */}
-      <div className="rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5">
-        <h2 className="text-sm font-medium text-[#f5f5f5] mb-2">Sobre o Serratech</h2>
-        <p className="text-sm leading-relaxed text-[#6b7280]">
+      <div className="rounded-lg border border-border bg-surface p-5">
+        <h2 className="text-sm font-medium text-text-primary mb-2">Sobre o Serratech</h2>
+        <p className="text-sm leading-relaxed text-text-secondary">
           Feito por serralheiro, para serralheiro. Calcule material,
           gere planos de corte e ganhe tempo no orçamento e na execução
           dos seus serviços.

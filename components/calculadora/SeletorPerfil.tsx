@@ -16,7 +16,7 @@ export default function SeletorPerfil({ linha, perfil, onLinhaChange, onPerfilCh
   return (
     <div className="space-y-5">
       <div>
-        <p className="mb-2 text-sm font-medium text-[#f5f5f5]">Linha</p>
+        <p className="mb-2 text-sm font-medium text-text-primary">Linha</p>
         <div className="flex flex-wrap gap-2">
           {linhas.map((item) => (
             <button
@@ -25,8 +25,8 @@ export default function SeletorPerfil({ linha, perfil, onLinhaChange, onPerfilCh
               onClick={() => onLinhaChange(item)}
               className={`rounded-lg border px-4 py-1.5 text-sm font-medium transition ${
                 linha === item
-                  ? 'border-[#f97316] bg-[#f97316] text-white'
-                  : 'border-[#2a2a2a] text-[#6b7280] hover:border-[#f97316] hover:text-[#f97316]'
+                  ? 'border-accent bg-accent text-white'
+                  : 'border-border text-text-secondary hover:border-accent hover:text-accent'
               }`}
             >
               {item}
@@ -36,7 +36,7 @@ export default function SeletorPerfil({ linha, perfil, onLinhaChange, onPerfilCh
       </div>
 
       <div>
-        <label htmlFor="perfil" className="mb-1.5 block text-sm font-medium text-[#f5f5f5]">
+        <label htmlFor="perfil" className="mb-1.5 block text-sm font-medium text-text-primary">
           Perfil
         </label>
         <select
@@ -46,7 +46,7 @@ export default function SeletorPerfil({ linha, perfil, onLinhaChange, onPerfilCh
             const selecionado = perfis.find((p) => p.cod === e.target.value)
             if (selecionado) onPerfilChange(selecionado)
           }}
-          className="w-full rounded-lg border border-[#2a2a2a] bg-[#0f0f0f] px-3 py-2.5 text-sm text-[#f5f5f5] focus:border-[#f97316] focus:outline-none"
+          className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-text-primary focus:border-accent focus:outline-none"
         >
           <option value="">Selecione um perfil...</option>
           {perfis.map((p) => (

@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} bg-[#0f0f0f] text-[#f5f5f5]`}>
+      <body className={`${inter.className} bg-background text-text-primary`}>
         <Menu />
         {/* Empurra o conteúdo para direita no desktop, e deixa espaço em baixo no mobile */}
         <div className="md:ml-56">

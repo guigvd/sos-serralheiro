@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   {
@@ -43,35 +44,68 @@ export default function Menu() {
   return (
     <>
       {/* Desktop: lateral */}
-      <nav className="hidden md:flex w-56 flex-col border-r border-[#2a2a2a] bg-[#1c1c1c] px-3 py-6 fixed top-0 left-0 h-full">
-        <div className="mb-8 px-3">
-          <span className="text-lg font-bold text-[#f5f5f5]">Serratech</span>
-          <p className="text-xs text-[#6b7280] mt-0.5">Ferramentas para serralheiros</p>
-        </div>
+      <nav className="hidden md:flex w-56 flex-col border-r border-border bg-surface px-3 py-6 fixed top-0 left-0 h-full">
+  <div className="mb-8 px-3">
+    <span className="text-lg font-bold text-text-primary">Serratech</span>
+    <p className="text-xs text-text-secondary mt-0.5">Ferramentas para serralheiros</p>
+  </div>
 
-        <div className="space-y-1">
-          {links.map((link) => {
-            const ativo = pathname === link.href
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                  ativo
-                    ? 'bg-[#f97316] text-white'
-                    : 'text-[#6b7280] hover:bg-[#2a2a2a] hover:text-[#f5f5f5]'
-                }`}
-              >
-                {link.icon}
-                {link.label}
-              </Link>
-            )
-          })}
-        </div>
-      </nav>
+  <div className="space-y-1">
+    {links.map((link) => {
+      const ativo = pathname === link.href
+      return (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+            ativo
+              ? 'bg-accent text-white'
+              : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'
+          }`}
+        >
+          {link.icon}
+          {link.label}
+        </Link>
+      )
+    })}
+  </div>
+
+  <div className="mt-auto px-3 pb-4">
+    <ThemeToggle />
+  </div>
+</nav><nav className="hidden md:flex w-56 flex-col border-r border-border bg-surface px-3 py-6 fixed top-0 left-0 h-full">
+  <div className="mb-8 px-3">
+    <span className="text-lg font-bold text-text-primary">Serratech</span>
+    <p className="text-xs text-text-secondary mt-0.5">Ferramentas para serralheiros</p>
+  </div>
+
+  <div className="space-y-1">
+    {links.map((link) => {
+      const ativo = pathname === link.href
+      return (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+            ativo
+              ? 'bg-accent text-white'
+              : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary'
+          }`}
+        >
+          {link.icon}
+          {link.label}
+        </Link>
+      )
+    })}
+  </div>
+
+  <div className="mt-auto px-3 pb-4">
+    <ThemeToggle />
+  </div>
+</nav>
 
       {/* Mobile: inferior */}
-      <nav className="menu-mobile md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-[#2a2a2a] bg-[#1c1c1c]">
+      <nav className="menu-mobile md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-border bg-surface">
         {links.map((link) => {
           const ativo = pathname === link.href
           return (
@@ -80,13 +114,15 @@ export default function Menu() {
               href={link.href}
               className={`flex flex-1 flex-col items-center gap-1 py-3 text-xs font-medium transition-colors ${
                 ativo
-                  ? 'text-[#f97316]'
-                  : 'text-[#6b7280]'
+                  ? 'text-accent'
+                  : 'text-text-secondary'
               }`}
             >
               {link.icon}
               {link.label}
             </Link>
+
+
           )
         })}
       </nav>

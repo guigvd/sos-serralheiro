@@ -23,14 +23,14 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] px-4 py-3">
+      <div className="rounded-lg border border-border bg-surface px-4 py-3">
         {perfil ? (
           <div className="flex items-center justify-between">
             <div className="text-sm">
-              <span className="font-semibold text-[#f97316]">{perfil.cod}</span>
-              <span className="ml-2 text-[#f5f5f5]">{perfil.peso.toFixed(3)} kg/m</span>
+              <span className="font-semibold text-accent">{perfil.cod}</span>
+              <span className="ml-2 text-text-primary">{perfil.peso.toFixed(3)} kg/m</span>
             </div>
-            <div className="relative h-16 w-24 rounded border border-[#2a2a2a] bg-[#0f0f0f]">
+            <div className="relative h-16 w-24 rounded border border-border bg-background">
               {perfil.imagem ? (
                 <Image
                   src={perfil.imagem}
@@ -52,7 +52,7 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
           </div>
         ) : (
           <div className="flex items-center gap-3 text-sm text-[#555]">
-            <div className="flex h-16 w-24 items-center justify-center rounded border border-[#2a2a2a]">
+            <div className="flex h-16 w-24 items-center justify-center rounded border border-border">
               <svg viewBox="0 0 60 60" className="h-12 w-12 text-[#333]" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <rect x="10" y="10" width="40" height="40" rx="2" />
                 <rect x="18" y="18" width="24" height="24" rx="1" />
@@ -67,14 +67,14 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div>
-          <label htmlFor="cor" className="mb-1.5 block text-sm font-medium text-[#f5f5f5]">
+          <label htmlFor="cor" className="mb-1.5 block text-sm font-medium text-text-primary">
             Cor
           </label>
           <select
             id="cor"
             value={cor}
             onChange={(e) => onCorChange(e.target.value as Cor)}
-            className="w-full rounded-lg border border-[#2a2a2a] bg-[#0f0f0f] px-3 py-2 text-sm text-[#f5f5f5] focus:border-[#f97316] focus:outline-none"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-text-primary focus:border-[#f97316] focus:outline-none"
           >
             {cores.map((c) => (
               <option key={c} value={c}>{nomesCores[c]}</option>
@@ -83,14 +83,14 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
         </div>
 
         <div>
-          <label htmlFor="tipo" className="mb-1.5 block text-sm font-medium text-[#f5f5f5]">
+          <label htmlFor="tipo" className="mb-1.5 block text-sm font-medium text-text-primary">
             Tipo
           </label>
           <select
             id="tipo"
             value={tipo}
             onChange={(e) => onTipoChange(e.target.value as TipoCompra)}
-            className="w-full rounded-lg border border-[#2a2a2a] bg-[#0f0f0f] px-3 py-2 text-sm text-[#f5f5f5] focus:border-[#f97316] focus:outline-none"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-text-primary focus:border-[#f97316] focus:outline-none"
           >
             {tipos.map((t) => (
               <option key={t} value={t}>{nomesTipos[t]}</option>
@@ -99,7 +99,7 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
         </div>
 
         <div>
-          <label htmlFor="quantidade" className="mb-1.5 block text-sm font-medium text-[#f5f5f5]">
+          <label htmlFor="quantidade" className="mb-1.5 block text-sm font-medium text-text-primary">
             Quantidade
           </label>
           <input
@@ -108,7 +108,7 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
             min={1}
             value={qtd}
             onChange={(e) => onQtdChange(Math.max(1, Number(e.target.value)))}
-            className="w-full rounded-lg border border-[#2a2a2a] bg-[#0f0f0f] px-3 py-2 text-sm text-[#f5f5f5] focus:border-[#f97316] focus:outline-none"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-text-primary focus:border-[#f97316] focus:outline-none"
           />
         </div>
 
@@ -117,7 +117,7 @@ export default function FormularioItem({ perfil, cor, tipo, qtd, onCorChange, on
             type="button"
             disabled={!perfil}
             onClick={onAdicionar}
-            className="w-full rounded-lg bg-[#f97316] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#ea6c0a] disabled:cursor-not-allowed disabled:opacity-40"
+            className="w-full rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40"
           >
             + Adicionar
           </button>

@@ -38,8 +38,8 @@ export default function Calculadora() {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5">
-        <h2 className="mb-5 text-sm font-medium text-[#f5f5f5]">
+      <div className="rounded-lg border border-border bg-surface p-5">
+        <h2 className="mb-5 text-sm font-medium text-text-primary">
           Selecionar perfil
         </h2>
         <SeletorPerfil
@@ -50,8 +50,8 @@ export default function Calculadora() {
         />
       </div>
 
-      <div className="rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5">
-        <h2 className="mb-5 text-sm font-medium text-[#f5f5f5]">
+      <div className="rounded-lg border border-border bg-surface p-5">
+        <h2 className="mb-5 text-sm font-medium text-text-primary">
           Adicionar material
         </h2>
         <FormularioItem
@@ -67,13 +67,13 @@ export default function Calculadora() {
       </div>
 
       <div className="space-y-3">
-        <h2 className="text-sm font-medium text-[#f5f5f5]">Materiais</h2>
+        <h2 className="text-sm font-medium text-text-primary">Materiais</h2>
         <ListaItens lista={lista} onRemover={removerItem} />
       </div>
 
       {totais.pecas > 0 && (
         <div className="space-y-3">
-          <h2 className="text-sm font-medium text-[#f5f5f5]">Resumo</h2>
+          <h2 className="text-sm font-medium text-text-primary">Resumo</h2>
           <Resumo pecas={totais.pecas} peso={totais.peso} custo={totais.custo} />
         </div>
       )}

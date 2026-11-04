@@ -16,9 +16,9 @@ export default function Resumo({ pecas, peso, custo }: Props) {
         { label: 'Peso total', valor: formatarPeso(peso) },
         { label: 'Custo estimado', valor: formatarMoeda(custo), destaque: true },
       ].map((card) => (
-        <div key={card.label} className="rounded-lg border border-[#2a2a2a] bg-[#1c1c1c] p-5">
-          <p className="text-xs text-[#6b7280]">{card.label}</p>
-          <p className={`mt-1 text-2xl font-semibold ${card.destaque ? 'text-[#f97316]' : 'text-[#f5f5f5]'}`}>
+        <div key={card.label} className="rounded-lg border border-border bg-surface p-5">
+          <p className="text-xs text-text-secondary">{card.label}</p>
+          <p className={`mt-1 text-2xl font-semibold ${card.destaque ? 'text-accent' : 'text-text-primary'}`}>
             {card.valor}
           </p>
         </div>
